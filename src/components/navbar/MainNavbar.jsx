@@ -13,20 +13,19 @@ const MainNavbar = () => {
                                 width={150}
                                 height={150}
                                 src="/logo/holcim_logo.svg"
+                                alt="logo de la empresa"
                             />
                         </div>
                     </Link>
-                    <ul className="flex justify-center gap-4">
+                    <ul className="flex justify-center gap-8">
                         <li className="">
-                            <Link href="/create">Alta de acreedor</Link>
+                            <Link href="/update">Actualización</Link>
                         </li>
                         <li className="">
-                            <Link href="/update">
-                                Actualización de documentación
-                            </Link>
+                            <Link href="/create">Alta</Link>
                         </li>
                         <li className="">
-                            <Link href="/multiple">Actualización multiple</Link>
+                            <Link href="/multiple">Multiple</Link>
                         </li>
                         <li className="">
                             <Link href="/expiration">Vencimientos</Link>

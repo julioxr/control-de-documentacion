@@ -1,0 +1,202 @@
+[
+    {
+        "id": "1",
+        "interlocutor": "Conductor",
+        "nombre": "Julio Roja",
+        "dni": "12345678",
+        "documentacion": "DNI",
+        "inicio": "10-04-2023",
+        "fin": "10-06-2023",
+        "status": "aprobado"
+    },
+    {
+        "id": "2",
+        "interlocutor": "Conductor",
+        "nombre": "Ana Gómez",
+        "dni": "23456789",
+        "documentacion": "Linti",
+        "inicio": "01-05-2023",
+        "fin": "01-08-2023",
+        "status": "rechazado"
+    },
+    {
+        "id": "3",
+        "interlocutor": "Conductor",
+        "nombre": "Pedro Pérez",
+        "dni": "34567890",
+        "documentacion": "Carnet de conducir",
+        "inicio": "15-07-2023",
+        "fin": "15-09-2023",
+        "status": "aprobado"
+    },
+    {
+        "id": "4",
+        "interlocutor": "Conductor",
+        "nombre": "María Fernández",
+        "dni": "45678901",
+        "documentacion": "Carnet de conducir",
+        "inicio": "03-09-2023",
+        "fin": "03-11-2023",
+        "status": "aprobado"
+    },
+    {
+        "id": "5",
+        "interlocutor": "Conductor",
+        "nombre": "Javier Martínez",
+        "dni": "56789012",
+        "documentacion": "DNI",
+        "inicio": "20-10-2023",
+        "fin": "20-12-2023",
+        "status": "aprobado"
+    },
+    {
+        "id": "6",
+        "interlocutor": "Conductor",
+        "nombre": "Isabel González",
+        "dni": "67890123",
+        "documentacion": "DNI",
+        "inicio": "12-11-2023",
+        "fin": "12-01-2024",
+        "status": "aprobado"
+    },
+    {
+        "id": "7",
+        "interlocutor": "Conductor",
+        "nombre": "Juan López",
+        "dni": "78901234",
+        "documentacion": "ART",
+        "inicio": "05-01-2024",
+        "fin": "05-03-2024",
+        "status": "aprobado"
+    },
+    {
+        "id": "8",
+        "interlocutor": "Conductor",
+        "nombre": "Laura Sánchez",
+        "dni": "89012345",
+        "documentacion": "Seguro de vida",
+        "inicio": "25-02-2024",
+        "fin": "25-04-2024",
+        "status": "aprobado"
+    },
+    {
+        "id": "9",
+        "interlocutor": "Conductor",
+        "nombre": "Sergio García",
+        "dni": "90123456",
+        "documentacion": "Linti",
+        "inicio": "18-03-2024",
+        "fin": "18-06-2024",
+        "status": "aprobado"
+    },
+    {
+        "id": "10",
+        "interlocutor": "Conductor",
+        "nombre": "Lucía Torres",
+        "dni": "01234567",
+        "documentacion": "DNI",
+        "inicio": "07-05-2024",
+        "fin": "07-08-2024",
+        "status": "aprobado"
+    },
+    {
+        "id": "11",
+        "interlocutor": "Conductor",
+        "nombre": "Pablo Fernández",
+        "dni": "12345678",
+        "documentacion": "Carnet de conducir",
+        "inicio": "30-06-2024",
+        "fin": "30-09-2024",
+        "status": "aprobado"
+    },
+    {
+        "id": "12",
+        "interlocutor": "Conductor",
+        "nombre": "Marina Sanchez",
+        "dni": "23456789",
+        "documentacion": "ART",
+        "inicio": "22-08-2024",
+        "fin": "22-11-2024",
+        "status": "aprobado"
+    },
+    {
+        "id": "13",
+        "interlocutor": "Conductor",
+        "nombre": "Ricardo Gómez",
+        "dni": "34567890",
+        "documentacion": "Carnet de conducir",
+        "inicio": "15-10-2024",
+        "fin": "15-01-2025",
+        "status": "aprobado"
+    },
+    {
+        "id": "14",
+        "interlocutor": "Conductor",
+        "nombre": "Marta Pérez",
+        "dni": "45678901",
+        "documentacion": "Carnet de conducir",
+        "inicio": "03-12-2024",
+        "fin": "03-03-2025",
+        "status": "aprobado"
+    },
+    {
+        "id": "15",
+        "interlocutor": "Conductor",
+        "nombre": "Alejandro Torres",
+        "dni": "56789012",
+        "documentacion": "DNI",
+        "inicio": "20-01-2025",
+        "fin": "20-04-2025",
+        "status": "aprobado"
+    },
+    {
+        "id": "16",
+        "interlocutor": "Conductor",
+        "nombre": "Carmen González",
+        "dni": "67890123",
+        "documentacion": "DNI",
+        "inicio": "12-03-2025",
+        "fin": "12-06-2025",
+        "status": "aprobado"
+    },
+    {
+        "id": "17",
+        "interlocutor": "Conductor",
+        "nombre": "Antonio Martínez",
+        "dni": "78901234",
+        "documentacion": "Linti",
+        "inicio": "05-05-2025",
+        "fin": "05-08-2025",
+        "status": "aprobado"
+    },
+    {
+        "id": "18",
+        "interlocutor": "Conductor",
+        "nombre": "Lucas Sánchez",
+        "dni": "89012345",
+        "documentacion": "Linti",
+        "inicio": "25-06-2025",
+        "fin": "25-09-2025",
+        "status": "aprobado"
+    },
+    {
+        "id": "19",
+        "interlocutor": "Conductor",
+        "nombre": "Sara García",
+        "dni": "90123456",
+        "documentacion": "ART",
+        "inicio": "18-08-2025",
+        "fin": "18-11-2025",
+        "status": "aprobado"
+    },
+    {
+        "id": "20",
+        "interlocutor": "Conductor",
+        "nombre": "Marcelo Torres",
+        "dni": "01234567",
+        "documentacion": "DNI",
+        "inicio": "07-10-2025",
+        "fin": "07-01-2026",
+        "status": "aprobado"
+    }
+]
