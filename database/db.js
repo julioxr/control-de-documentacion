@@ -4,8 +4,8 @@ const pool = createPool({
     host: process.env.HOST,
     user: process.env.USER,
     password: process.env.DB_PASSWORD,
-    port: 3306,
-    database: "productsdb",
+    port: process.env.PORT,
+    database: process.env.DB_NAME,
 });
 
 export { pool };

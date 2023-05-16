@@ -5,7 +5,7 @@ const page = () => {
         <>
             <h1 className="text-center text-6xl font-bold">Actualización</h1>
 
-            <section className="container mx-auto w-full">
+            {/* <section className="container mx-auto w-full">
                 <form action="" className="h-20 bg-green-100">
                     <select name="" id="">
                         <option value="blank">Seleccione una opcion</option>
@@ -18,6 +18,9 @@ const page = () => {
                     <input type="text" placeholder="ABC123" />
                     <input type="text" placeholder="ZXY123" />
                 </form>
+            </section> */}
+            <section>
+                <p>datos</p>
             </section>
         </>
     );
