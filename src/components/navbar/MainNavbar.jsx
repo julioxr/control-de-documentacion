@@ -24,9 +24,9 @@ const MainNavbar = () => {
                         <li className="">
                             <Link href="/create">Alta</Link>
                         </li>
-                        <li className="">
+                        {/* <li className="">
                             <Link href="/multiple">Multiple</Link>
-                        </li>
+                        </li> */}
                         <li className="">
                             <Link href="/expiration">Vencimientos</Link>
                         </li>

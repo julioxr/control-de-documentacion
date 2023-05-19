@@ -7,7 +7,7 @@ export default async function Home() {
     return (
         <main className="flex flex-col items-center">
             <h1 className="text-center text-4xl font-bold">
-                Actualizaciones realizadas
+                Historial de actualizaciones
             </h1>
             {/* Seccion tabla */}
             <div className="bg-white py-8">

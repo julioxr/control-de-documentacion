@@ -3,7 +3,7 @@ import React from "react";
 const page = () => {
     return (
         <>
-            <h1 className="text-center text-6xl font-bold">Actualización</h1>
+            <h1 className="text-center text-4xl font-bold">Actualización</h1>
 
             {/* <section className="container mx-auto w-full">
                 <form action="" className="h-20 bg-green-100">
@@ -20,7 +20,12 @@ const page = () => {
                 </form>
             </section> */}
             <section>
-                <p>datos</p>
+                <p>
+                    aca debo poder seleccionar un input con interlocutor,
+                    nombre, y dni, inicio y fin, adjuntar archivo. Tener en
+                    cuenta sql para enviar el nombre del archivo y el contenido
+                    por separado
+                </p>
             </section>
         </>
     );
