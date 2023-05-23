@@ -2,18 +2,18 @@ import React from "react";
 
 const BodyTable = ({
     id,
-    interlocutor,
+    tipo,
     nombre,
     dni,
-    documentacion,
-    inicio,
-    fin,
+    nombre_documentacion,
+    inicio_vigencia,
+    fin_vigencia,
     status,
 }) => {
     return (
         <tr key={id} className="border-b bg-white hover:bg-gray-50">
             <td className="px-6 py-4">
-                <span>{interlocutor}</span>
+                <span>{tipo}</span>
             </td>
             <td>
                 <span>{nombre}</span>
@@ -22,13 +22,13 @@ const BodyTable = ({
                 <span>{dni}</span>
             </td>
             <td>
-                <span>{documentacion}</span>
+                <span>{nombre_documentacion}</span>
             </td>
             <td className="px-6 py-4">
-                <span>{inicio}</span>
+                <span>{inicio_vigencia.slice(0, 10)}</span>
             </td>
             <td className="px-6 py-4">
-                <span>{fin}</span>
+                <span>{fin_vigencia.slice(0, 10)}</span>
             </td>
             <td className="flex items-center px-6 py-4">
                 <div
@@ -36,9 +36,9 @@ const BodyTable = ({
                         status == "aprobado" ? "bg-green-500" : "bg-red-500"
                     }`}
                 ></div>
-                <span>{status}</span>
+                <span>Enviado</span>
             </td>
-            <td className="gap-4 px-6 py-4">
+            {/* <td className="gap-4 px-6 py-4">
                 <a
                     href="#"
                     className="font-medium text-red-600 hover:underline"
@@ -61,7 +61,7 @@ const BodyTable = ({
                 >
                     Enviar
                 </a>
-            </td>
+            </td> */}
         </tr>
     );
 };
