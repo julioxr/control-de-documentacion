@@ -23,6 +23,7 @@ export async function POST(request) {
             dni,
             fecha_alta,
         ];
+
         const [interlocutores] = await pool.query(query, values);
         return NextResponse.json(interlocutores);
     } catch (error) {
