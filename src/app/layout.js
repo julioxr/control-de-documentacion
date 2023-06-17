@@ -1,5 +1,6 @@
 import "./globals.css";
 import MainNavbar from "@/components/navbar/MainNavbar";
+import AuthProvider from "@/components/authProvider/AuthProvider";
 
 export const metadata = {
     title: "Control de documentación",
@@ -11,8 +12,10 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en" className="min-h-screen  text-htextalt">
             <body>
-                <MainNavbar />
-                {children}
+                <AuthProvider>
+                    <MainNavbar />
+                    {children}
+                </AuthProvider>
             </body>
         </html>
     );

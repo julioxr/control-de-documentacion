@@ -1,17 +1,17 @@
 import React from "react";
 
-const BodyTable = ({
-    id,
-    tipo,
-    nombre,
-    dni,
-    nombre_documentacion,
-    inicio_vigencia,
-    fin_vigencia,
-    status,
-}) => {
+const BodyTable = ({ dato, index }) => {
+    const {
+        tipo,
+        nombre,
+        dni,
+        nombre_documentacion,
+        inicio_vigencia,
+        fin_vigencia,
+        status,
+    } = dato;
     return (
-        <tr key={id} className="border-b bg-white hover:bg-gray-50">
+        <tr className="border-b bg-white hover:bg-gray-50">
             <td className="px-6 py-4">
                 <span>{tipo}</span>
             </td>
@@ -38,30 +38,6 @@ const BodyTable = ({
                 ></div>
                 <span>Enviado</span>
             </td>
-            {/* <td className="gap-4 px-6 py-4">
-                <a
-                    href="#"
-                    className="font-medium text-red-600 hover:underline"
-                >
-                    Eliminar
-                </a>
-            </td>
-            <td className=" gap-4 px-6 py-4">
-                <a
-                    href="#"
-                    className="font-medium text-blue-600 hover:underline"
-                >
-                    Adjuntar
-                </a>
-            </td>
-            <td className=" gap-4 px-6 py-4">
-                <a
-                    href="#"
-                    className="font-medium text-blue-600 hover:underline"
-                >
-                    Enviar
-                </a>
-            </td> */}
         </tr>
     );
 };

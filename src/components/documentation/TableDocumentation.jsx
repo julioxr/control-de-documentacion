@@ -1,9 +1,6 @@
 import BodyTable from "@/components/documentation/BodyTable";
-import { getData } from "../../../lib/get-data";
 
-const TableDocumentation = async () => {
-    const documentacion = await getData();
-
+const TableDocumentation = ({ historial }) => {
     return (
         <table className="w-fit text-left text-sm text-hdgray">
             <thead className="bg-gray-50 text-xs uppercase text-htext">
@@ -36,9 +33,12 @@ const TableDocumentation = async () => {
                 </tr>
             </thead>
             <tbody>
-                {documentacion.slice(0, 10).map((dato) => (
-                    <BodyTable {...dato} />
-                ))}
+                {historial &&
+                    historial
+                        .slice(0, 10)
+                        .map((dato, index) => (
+                            <BodyTable key={index} dato={dato} />
+                        ))}
             </tbody>
         </table>
     );
