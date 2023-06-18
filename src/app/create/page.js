@@ -3,6 +3,7 @@ import { getTiposInterlocutores } from "../../../lib/get-data";
 
 const page = async () => {
     const tiposInterlocutores = await getTiposInterlocutores();
+    console.log(tiposInterlocutores);
     return (
         <section className="container mx-auto max-w-5xl">
             <h1 className="mb-8 text-center text-4xl font-bold">Alta</h1>

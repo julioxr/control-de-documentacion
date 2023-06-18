@@ -1,5 +1,6 @@
 "use client";
 import { useSession, signIn, signOut } from "next-auth/react";
+import Link from "next/link";
 
 const Login = () => {
     const session = useSession();
@@ -15,6 +16,7 @@ const Login = () => {
                 >
                     Login con google
                 </button>
+                <Link href={"/register"}>o registrate</Link>
             </main>
         </>
     );
