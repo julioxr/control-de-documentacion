@@ -1,6 +1,8 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { signOut } from "next-auth/react";
 
 const MainNavbar = () => {
     return (
@@ -31,6 +33,13 @@ const MainNavbar = () => {
                             <Link href="/expiration">Vencimientos</Link>
                         </li>
                     </ul>
+                    {/* Boton para logout */}
+                    <button
+                        className="rounded bg-slate-200 p-2"
+                        onClick={signOut}
+                    >
+                        Salir
+                    </button>
                 </nav>
             </section>
         </>
