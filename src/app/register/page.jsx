@@ -21,8 +21,9 @@ const page = () => {
                 },
                 body: JSON.stringify({ name, email, password }),
             });
-            res.status === 201 &&
-                router.push("/login?success=Account has bee created");
+            // res.status === 201 &&
+            //     router.push("/login?success=Account has bee created");
+            res.status === 201 && router.push("/");
         } catch (error) {
             setErr(true);
         }
@@ -57,7 +58,9 @@ const page = () => {
                     </button>
                 </form>
                 {err && <p>Hubo un error</p>}
-                <Link href={"/"}>Volver al login</Link>
+                <Link href={"/"} className="mt-4">
+                    Volver al login
+                </Link>
             </section>
         </>
     );
