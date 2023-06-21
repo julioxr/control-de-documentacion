@@ -3,8 +3,8 @@ import { useSession, signIn } from "next-auth/react";
 import Link from "next/link";
 
 const Login = () => {
-    const session = useSession();
-    console.log(session);
+    // const session = useSession();
+    // console.log(session);
 
     const handleSubmit = async (e) => {
         e.preventDefault();

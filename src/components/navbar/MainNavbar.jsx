@@ -2,9 +2,10 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { signOut } from "next-auth/react";
+import { useSession, signOut } from "next-auth/react";
 
 const MainNavbar = () => {
+    const session = useSession();
     return (
         <>
             <section className="flex h-20 w-full bg-white">
@@ -34,12 +35,14 @@ const MainNavbar = () => {
                         </li>
                     </ul>
                     {/* Boton para logout */}
-                    <button
-                        className="rounded bg-slate-200 p-2"
-                        onClick={signOut}
-                    >
-                        Salir
-                    </button>
+                    {session.status === "authenticated" && (
+                        <button
+                            className="rounded bg-slate-200 p-2"
+                            onClick={signOut}
+                        >
+                            Salir
+                        </button>
+                    )}
                 </nav>
             </section>
         </>

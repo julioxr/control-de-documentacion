@@ -20,11 +20,6 @@ const handler = NextAuth({
 
                     const [user] = await pool.query(query, values);
 
-                    console.log(
-                        "pass user: " + credentials.password,
-                        "hash:" + user[0].password
-                    );
-
                     if (user) {
                         const isPasswordCorrect = await bcrypt.compare(
                             credentials.password,
@@ -32,12 +27,12 @@ const handler = NextAuth({
                         );
 
                         if (isPasswordCorrect) {
-                            console.log("INGRESASTE");
+                            return user[0];
                         } else {
-                            console.log("NO INGRESASTE");
+                            throw new Error("Credenciales erroneas!");
                         }
                     } else {
-                        console.log("usuario no encontrado");
+                        throw new Error("Usuario no encontrado!");
                     }
                 } catch (error) {
                     return newResponse(error.message, {
@@ -48,7 +43,7 @@ const handler = NextAuth({
         }),
     ],
     pages: {
-        error: "/",
+        error: "/register",
     },
 });
 
