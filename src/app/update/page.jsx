@@ -1,6 +1,6 @@
 import React from "react";
 
-const page = () => {
+const Update = () => {
     return (
         <>
             <h1 className="text-center text-4xl font-bold">Actualización</h1>
@@ -31,4 +31,4 @@ const page = () => {
     );
 };
 
-export default page;
+export default Update;

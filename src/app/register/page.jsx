@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
-const page = () => {
+const Register = () => {
     const [err, setErr] = useState(false);
     const router = useRouter();
 
@@ -66,4 +66,4 @@ const page = () => {
     );
 };
 
-export default page;
+export default Register;

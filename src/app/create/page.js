@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
-const page = () => {
+const Create = () => {
     const [tiposInterlocutores, setTiposInterlocutores] = useState([]);
     const session = useSession();
     const router = useRouter();
@@ -15,7 +15,7 @@ const page = () => {
         const fetchTiposInterlocutores = async () => {
             try {
                 const response = await fetch(
-                    `http://localhost:3000/api/tipo-interlocutor`, // Desde el cliente no se puede usar process.env.BASE_URL_API
+                    `http://localhost:3000/api/tipo-interlocutor`, // Desde el cliente no se puede usar process.env.BASE_URL_API a menos que se haga visible la url
                     {
                         cache: "no-store",
                     }
@@ -55,4 +55,4 @@ const page = () => {
     );
 };
 
-export default page;
+export default Create;

@@ -1,6 +1,6 @@
 import React from "react";
 
-const page = () => {
+const Multiple = () => {
     return (
         <>
             <h1 className="text-center text-6xl font-bold">Multiple</h1>
@@ -8,4 +8,4 @@ const page = () => {
     );
 };
 
-export default page;
+export default Multiple;
