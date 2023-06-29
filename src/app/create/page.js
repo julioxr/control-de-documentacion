@@ -5,11 +5,11 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
 const Create = () => {
-    const [tiposInterlocutores, setTiposInterlocutores] = useState([]);
     const session = useSession();
     const router = useRouter();
+    const [tiposInterlocutores, setTiposInterlocutores] = useState([]);
 
-    if (session.status === "unauthenticated") router.push("/");
+    // if (session.status === "unauthenticated") router.push("/");
 
     useEffect(() => {
         const fetchTiposInterlocutores = async () => {
@@ -27,7 +27,7 @@ const Create = () => {
             }
         };
         fetchTiposInterlocutores();
-    }, []);
+    }, [tiposInterlocutores]);
 
     return (
         <section className="container mx-auto max-w-5xl">

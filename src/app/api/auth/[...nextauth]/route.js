@@ -3,6 +3,7 @@ import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcryptjs";
 import { pool } from "../../../../../database/db";
+import { redirect } from "next/dist/server/api-utils";
 
 const handler = NextAuth({
     providers: [

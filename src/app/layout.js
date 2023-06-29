@@ -11,7 +11,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="en" className="min-h-screen  text-htextalt">
-            <body>
+            <body className="overflow-x-hidden bg-[#f4f4f4]">
                 <AuthProvider>
                     <MainNavbar />
                     {children}
