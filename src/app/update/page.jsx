@@ -1,34 +1,51 @@
-import React from "react";
+"use client";
+import { useEffect } from "react";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 const Update = () => {
-    return (
-        <>
-            <h1 className="text-center text-4xl font-bold">Actualización</h1>
+    const { data: session, status } = useSession();
+    const router = useRouter();
 
-            {/* <section className="container mx-auto w-full">
-                <form action="" className="h-20 bg-green-100">
-                    <select name="" id="">
-                        <option value="blank">Seleccione una opcion</option>
-                        <option value="Interlocutor">Cuit empresa</option>
-                        <option value="cuit">Cuit empresa</option>
-                        <option value="conductor">Conductor</option>
-                        <option value="camion">Camion</option>
-                        <option value="acoplado">Acoplado</option>
-                    </select>
-                    <input type="text" placeholder="ABC123" />
-                    <input type="text" placeholder="ZXY123" />
-                </form>
-            </section> */}
-            <section>
-                <p>
-                    aca debo poder seleccionar un input con interlocutor,
-                    nombre, y dni, inicio y fin, adjuntar archivo. Tener en
-                    cuenta sql para enviar el nombre del archivo y el contenido
-                    por separado
-                </p>
-            </section>
-        </>
-    );
+    useEffect(() => {
+        if (status === "unauthenticated") {
+            router.push("/");
+            return;
+        }
+    }, [status]);
+
+    if (status === "authenticated") {
+        return (
+            <>
+                <h1 className="text-center text-4xl font-bold">
+                    Actualización
+                </h1>
+
+                {/* <section className="container mx-auto w-full">
+                    <form action="" className="h-20 bg-green-100">
+                        <select name="" id="">
+                            <option value="blank">Seleccione una opcion</option>
+                            <option value="Interlocutor">Cuit empresa</option>
+                            <option value="cuit">Cuit empresa</option>
+                            <option value="conductor">Conductor</option>
+                            <option value="camion">Camion</option>
+                            <option value="acoplado">Acoplado</option>
+                        </select>
+                        <input type="text" placeholder="ABC123" />
+                        <input type="text" placeholder="ZXY123" />
+                    </form>
+                </section> */}
+                <section>
+                    <p>
+                        aca debo poder seleccionar un input con interlocutor,
+                        nombre, y dni, inicio y fin, adjuntar archivo. Tener en
+                        cuenta sql para enviar el nombre del archivo y el
+                        contenido por separado
+                    </p>
+                </section>
+            </>
+        );
+    }
 };
 
 export default Update;

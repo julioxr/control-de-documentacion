@@ -5,16 +5,11 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
 const Create = () => {
-    const session = useSession();
+    const { data: session, status } = useSession();
     const router = useRouter();
     const [tiposInterlocutores, setTiposInterlocutores] = useState([]);
 
     useEffect(() => {
-        if (session.status === "unauthenticated") {
-            router.push("/");
-            return;
-        }
-
         const fetchTiposInterlocutores = async () => {
             try {
                 const response = await fetch(
@@ -32,7 +27,14 @@ const Create = () => {
         fetchTiposInterlocutores();
     }, [tiposInterlocutores]);
 
-    if (session.status === "authenticated") {
+    useEffect(() => {
+        if (status === "unauthenticated") {
+            router.push("/");
+            return;
+        }
+    }, [status]);
+
+    if (status === "authenticated") {
         return (
             <section className="container mx-auto max-w-5xl">
                 <h1 className="mb-8 text-center text-4xl font-bold">Alta</h1>

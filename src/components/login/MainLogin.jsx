@@ -1,17 +1,21 @@
 "use client";
+import { useEffect } from "react";
 import { useSession } from "next-auth/react";
 import FormLogin from "./FormLogin";
 import { useRouter } from "next/navigation";
 
 const Login = () => {
-    const session = useSession();
+    const { data: session, status } = useSession();
     const router = useRouter();
 
-    if (session.status === "authenticated") {
-        router.push("/dashboard");
-    }
+    useEffect(() => {
+        if (status === "authenticated") {
+            router.push("/dashboard");
+            return;
+        }
+    }, [status]);
 
-    if (session.status === "unauthenticated") {
+    if (status === "unauthenticated") {
         return (
             <>
                 <main className="container mx-auto flex min-h-[calc(100vh-80px)] items-center justify-center gap-52">

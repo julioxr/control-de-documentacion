@@ -18,6 +18,10 @@ const Dashboard = () => {
         return (
             <>
                 <h1 className="text-center text-4xl font-bold">Dashboard</h1>
+                <p>
+                    Estas logeado como{" "}
+                    <span className="font-bold">{session.user?.email}</span>
+                </p>
             </>
         );
     }
