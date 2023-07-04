@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useSession, signOut } from "next-auth/react";
 
 const MainNavbar = () => {
-    const session = useSession();
+    const { data: session, status } = useSession();
     return (
         <>
             <section className="flex h-20 w-full bg-[#f4f4f4]">
@@ -20,29 +20,13 @@ const MainNavbar = () => {
                             />
                         </div>
                     </Link>
-                    {session.status === "authenticated" && (
-                        <>
-                            <ul className="flex justify-center gap-8">
-                                <li className="">
-                                    <Link href="/update">Actualización</Link>
-                                </li>
-                                <li className="">
-                                    <Link href="/create">Alta</Link>
-                                </li>
-                                {/* <li className="">
-                                <Link href="/multiple">Multiple</Link>
-                            </li> */}
-                                <li className="">
-                                    <Link href="/expiration">Vencimientos</Link>
-                                </li>
-                            </ul>
-                            <button
-                                className="rounded bg-slate-200 p-2"
-                                onClick={signOut}
-                            >
-                                Salir
-                            </button>
-                        </>
+                    {status === "authenticated" && (
+                        <button
+                            className="rounded bg-hdarkblue px-6 py-2 text-white"
+                            onClick={signOut}
+                        >
+                            Salir
+                        </button>
                     )}
                 </nav>
             </section>
@@ -51,3 +35,28 @@ const MainNavbar = () => {
 };
 
 export default MainNavbar;
+
+// {session.status === "authenticated" && (
+//     <>
+//         <ul className="flex justify-center gap-8">
+//             <li className="">
+//                 <Link href="/update">Actualización</Link>
+//             </li>
+//             <li className="">
+//                 <Link href="/create">Alta</Link>
+//             </li>
+//             {/* <li className="">
+//             <Link href="/multiple">Multiple</Link>
+//         </li> */}
+//             <li className="">
+//                 <Link href="/expiration">Vencimientos</Link>
+//             </li>
+//         </ul>
+//         <button
+//             className="rounded bg-slate-200 p-2"
+//             onClick={signOut}
+//         >
+//             Salir
+//         </button>
+//     </>
+// )}

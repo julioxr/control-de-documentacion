@@ -2,6 +2,7 @@
 import { useEffect } from "react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import MainDashboard from "@/components/dashboard/MainDashboard";
 
 const Dashboard = () => {
     const { data: session, status } = useSession();
@@ -17,11 +18,7 @@ const Dashboard = () => {
     if (status === "authenticated") {
         return (
             <>
-                <h1 className="text-center text-4xl font-bold">Dashboard</h1>
-                <p>
-                    Estas logeado como{" "}
-                    <span className="font-bold">{session.user?.email}</span>
-                </p>
+                <MainDashboard />
             </>
         );
     }
