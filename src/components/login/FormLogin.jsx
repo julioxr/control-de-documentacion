@@ -31,7 +31,7 @@ const FormLogin = () => {
                     <div className="flex flex-col gap-6">
                         <div className="flex flex-col">
                             <label htmlFor="email" className="mb-1 text-sm">
-                                Email o nombre de usuario
+                                Email o nombre de usuar io
                             </label>
                             <input
                                 type="email"

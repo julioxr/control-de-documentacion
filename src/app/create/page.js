@@ -7,13 +7,18 @@ import { useRouter } from "next/navigation";
 const Create = () => {
     const { data: session, status } = useSession();
     const router = useRouter();
+
     const [tiposInterlocutores, setTiposInterlocutores] = useState([]);
+    const [name, setName] = useState("");
+    const [dni, setDni] = useState("");
+    const [selectedOption, setSelectedOption] = useState("empty");
+    const [success, setSuccess] = useState(false);
 
     useEffect(() => {
         const fetchTiposInterlocutores = async () => {
             try {
                 const response = await fetch(
-                    `http://localhost:3000/api/tipo-interlocutor`, // Desde el cliente no se puede usar process.env.BASE_URL_API a menos que se haga visible la url
+                    `/api/tipo-interlocutor`, // Desde el cliente no se puede usar process.env.BASE_URL_API a menos que se haga visible la url
                     {
                         cache: "no-store",
                     }
@@ -25,7 +30,7 @@ const Create = () => {
             }
         };
         fetchTiposInterlocutores();
-    }, [tiposInterlocutores]);
+    }, []);
 
     useEffect(() => {
         if (status === "unauthenticated") {
@@ -34,29 +39,89 @@ const Create = () => {
         }
     }, [status]);
 
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        const fetchCreateInterlocutor = async () => {
+            try {
+                const response = await fetch("/api/interlocutores", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        tipo_interlocutor: selectedOption,
+                        nombre: name,
+                        dni: dni,
+                        fecha_alta: new Date(),
+                    }),
+                });
+
+                if (response.status === 200) {
+                    setSuccess(true);
+                }
+            } catch (error) {
+                console.log("Error de red:", error);
+            }
+        };
+        fetchCreateInterlocutor();
+    };
+
     if (status === "authenticated") {
         return (
             <section className="container mx-auto max-w-5xl">
                 <h1 className="mb-8 text-center text-4xl font-bold">Alta</h1>
-                <select name="" id="" className="">
-                    <option id="0" value="empty">
-                        Seleccione una opcion
-                    </option>
-                    {tiposInterlocutores.map(({ id_interlocutores, tipo }) => {
-                        return (
-                            <option
-                                id={id_interlocutores}
-                                key={id_interlocutores}
-                                value={tipo}
-                            >
-                                {tipo.charAt(0).toUpperCase() + tipo.slice(1)}
+
+                <div className="flex w-full justify-center">
+                    <form className="flex gap-4" onSubmit={handleSubmit}>
+                        <select
+                            name=""
+                            className="h-12 rounded border pl-4"
+                            onChange={(e) => setSelectedOption(e.target.value)}
+                            value={selectedOption}
+                        >
+                            <option id="0" value="empty">
+                                Seleccione una opcion
                             </option>
-                        );
-                    })}
-                </select>
-                <input type="text" placeholder="Nombre / Placa" />
-                <input type="text" placeholder="DNI / Patente" />
-                <button type="submit">Crear</button>
+                            {tiposInterlocutores.map(
+                                ({ id_interlocutores, tipo }) => {
+                                    return (
+                                        <option
+                                            key={id_interlocutores}
+                                            value={id_interlocutores}
+                                        >
+                                            {tipo.charAt(0).toUpperCase() +
+                                                tipo.slice(1)}
+                                        </option>
+                                    );
+                                }
+                            )}
+                        </select>
+                        <input
+                            type="text"
+                            placeholder="Nombre / Placa"
+                            className="h-12 rounded border pl-4 focus:outline-gray-500"
+                            onChange={(e) => setName(e.target.value)}
+                            value={name}
+                        />
+                        <input
+                            type="text"
+                            placeholder="DNI / Patente"
+                            className="h-12 rounded border pl-4 focus:outline-gray-500"
+                            onChange={(e) => setDni(e.target.value)}
+                            value={dni}
+                        />
+                        <button
+                            type="submit"
+                            className="rounded bg-hdarkblue px-6 py-2 text-white"
+                        >
+                            Crear
+                        </button>
+                    </form>
+                </div>
+                {success && (
+                    <p>{`Interlocutor ${name} creado correctamente`}</p>
+                )}
             </section>
         );
     }
